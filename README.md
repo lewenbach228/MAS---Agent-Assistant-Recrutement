@@ -1,86 +1,86 @@
 # Agent Assistant Recrutement
 
-Demo portfolio d'un systeme de recrutement assiste par IA, construit pour montrer un pipeline multi-agent lisible, un arbitrage local vs provider, des artefacts inspectables et une revue humaine avant toute action finale.
+Démo portfolio d'un système de recrutement assisté par IA, construit pour montrer un pipeline multi-agent lisible, un arbitrage local vs provider, des artefacts inspectables et une revue humaine avant toute action finale.
 
-## Probleme
+## Problème
 
-La plupart des demos IA montrent un resultat final, mais tres peu montrent :
+La plupart des démos IA montrent un résultat final, mais très peu montrent :
 
-- comment le systeme lit les entrees
-- comment les etapes se passent le relais
-- ou le provider intervient vraiment
-- comment le fallback est gere
-- ou l'humain reprend la main
+- comment le système lit les entrées
+- comment les étapes se passent le relais
+- où le provider intervient vraiment
+- comment le fallback est géré
+- où l'humain reprend la main
 
-Dans un workflow sensible comme le recrutement, cette opacite pose un probleme simple :
-on peut difficilement faire confiance a une decision que l'on ne peut ni suivre, ni comparer, ni expliquer.
+Dans un workflow sensible comme le recrutement, cette opacité pose un problème simple :
+on peut difficilement faire confiance à une décision que l'on ne peut ni suivre, ni comparer, ni expliquer.
 
 ## Solution
 
-`Agent Assistant Recrutement` est une console de screening seedee qui rejoue toujours le meme scenario de recrutement pour rendre la demo stable, lisible et defendable. Le produit affiche un pipeline d'agents nommes, supporte trois modes d'execution (`deterministic`, `live_llm`, `compare`), expose les artefacts intermediaires, puis garde une revue humaine obligatoire avant toute suite. Le projet est volontairement un `pipeline multi-agent local` et une `demo agentique hybride`, pas un systeme distribue complet.
+`Agent Assistant Recrutement` est une console de screening seedée qui rejoue toujours le même scénario de recrutement pour rendre la démo stable, lisible et défendable. Le produit affiche un pipeline d'agents nommés, supporte trois modes d'exécution (`deterministic`, `live_llm`, `compare`), expose les artefacts intermédiaires, puis garde une revue humaine obligatoire avant toute suite. Le projet est volontairement un `pipeline multi-agent local` et une `démo agentique hybride`, pas un système distribué complet.
 
 ## Pourquoi ce projet existe
 
-Je ne voulais pas faire "encore une demo RH".
+Je ne voulais pas faire "encore une démo RH".
 
 Je voulais montrer quelque chose de plus utile :
 
 - un workflow agentique visible
-- un moteur de run separe de l'interface
+- un moteur de run séparé de l'interface
 - un fallback explicite
 - une comparaison local vs provider
 - une gouvernance lisible
 
-L'objectif est de prouver une competence d'architecture IA sur un cas metier simple a comprendre.
+L'objectif est de prouver une compétence d'architecture IA sur un cas métier simple à comprendre.
 
-## Ce que montre la demo
+## Ce que montre la démo
 
 Depuis l'interface, on peut :
 
-- ouvrir un scenario seed fixe
+- ouvrir un scénario seed fixe
 - consulter la fiche de poste en lecture seule
-- consulter les candidats seedes en lecture seule
-- choisir un mode d'execution
+- consulter les candidats seedés en lecture seule
+- choisir un mode d'exécution
 - lancer un run
-- inspecter le classement, les details, le relay et les artefacts
+- inspecter le classement, les détails, le relay et les artefacts
 
-Le systeme :
+Le système :
 
 - lit la fiche de poste
 - relit les candidatures
 - extrait les signaux utiles
 - compare les profils au besoin
-- propose une decision
-- prepare un brouillon de reponse
+- propose une décision
+- prépare un brouillon de réponse
 - impose une revue humaine finale
 
 ## Workflow agentique
 
-Le produit est presente en etapes visibles :
+Le produit est présenté en étapes visibles :
 
 ### Job Intake Agent
 
-Lit la fiche de poste seedee et produit une version structuree exploitable par le reste du pipeline.
+Lit la fiche de poste seedée et produit une version structurée exploitable par le reste du pipeline.
 
 ### Candidate Intake Agent
 
-Recupere les informations cle de chaque candidature du lot seed.
+Récupère les informations clés de chaque candidature du lot seed.
 
 ### Extraction Agent
 
-Extrait les signaux utiles du profil candidat : competences, experience, points forts et zones d'incertitude.
+Extrait les signaux utiles du profil candidat : compétences, expérience, points forts et zones d'incertitude.
 
 ### Match Agent
 
-Compare le profil aux criteres du poste et produit un matching plus explicite.
+Compare le profil aux critères du poste et produit un matching plus explicite.
 
 ### Decision Agent
 
-Propose un score, une decision et une justification.
+Propose un score, une décision et une justification.
 
 ### Response Draft Agent
 
-Prepare un brouillon de reponse adapte a la decision.
+Prépare un brouillon de réponse adapté à la décision.
 
 ### Review Gate Agent
 
@@ -91,20 +91,20 @@ Rappelle que la validation finale reste humaine.
 Ce projet n'est pas :
 
 - un ATS complet
-- une inbox de recrutement connectee
-- un systeme qui recrute seul
-- un systeme agentique distribue deja industrialise
+- une inbox de recrutement connectée
+- un système qui recrute seul
+- un système agentique distribué déjà industrialisé
 
-C'est une demo portfolio pensee pour :
+C'est une démo portfolio pensée pour :
 
 - les recruteurs techniques
 - les CTO et leads IA
-- les fondateurs qui veulent evaluer une logique produit
-- les portfolios orientes workflows IA
+- les fondateurs qui veulent évaluer une logique produit
+- les portfolios orientés workflows IA
 
 Use case central :
 
-prendre un lot seed de candidatures, le faire passer dans un pipeline agentique lisible, comparer un chemin local et un chemin provider, puis montrer comment la decision reste explicable et supervisee.
+prendre un lot seed de candidatures, le faire passer dans un pipeline agentique lisible, comparer un chemin local et un chemin provider, puis montrer comment la décision reste explicable et supervisée.
 
 ## Vue d'ensemble de l'interface
 
@@ -112,62 +112,62 @@ prendre un lot seed de candidatures, le faire passer dans un pipeline agentique 
 
 - choisir le mode `deterministic`, `live_llm` ou `compare`
 - choisir le provider si besoin
-- saisir une cle API BYOK si l'on veut tester un provider
+- saisir une clé API BYOK si l'on veut tester un provider
 - lancer le run
 - visualiser le passage de relais entre agents
 
 ### Candidates
 
 - consulter le lot seed de candidats
-- ouvrir le detail d'un candidat
-- comparer score, decision, matching et brouillon
+- ouvrir le détail d'un candidat
+- comparer score, décision, matching et brouillon
 
 ### Artifacts
 
-- inspecter la fiche structuree
+- inspecter la fiche structurée
 - inspecter le matching candidat
-- inspecter la decision
+- inspecter la décision
 - inspecter le draft
 - inspecter l'artefact de comparaison en mode `compare`
 
 ### Governance
 
 - voir les messages de fallback
-- voir les limites du systeme
+- voir les limites du système
 - voir le rappel de supervision humaine
 
-## Modes d'execution
+## Modes d'exécution
 
 ### Deterministic
 
-Mode stable, local et testable sans cle API.
+Mode stable, local et testable sans clé API.
 
 ### Live LLM
 
-Mode provider reel, BYOK, pour observer comment le pipeline se comporte avec OpenAI ou Gemini.
+Mode provider réel, BYOK, pour observer comment le pipeline se comporte avec OpenAI ou Gemini.
 
 ### Compare
 
-Mode qui confronte deux executions sur le meme scenario :
+Mode qui confronte deux exécutions sur le même scénario :
 
 - un run local
 - un run provider
 
-Puis affiche les ecarts sur la lecture de la fiche, les scores, les decisions et les brouillons.
+Puis affiche les écarts sur la lecture de la fiche, les scores, les décisions et les brouillons.
 
-## Demo principale
+## Démo principale
 
-1. L'utilisateur ouvre le scenario seed de reference.
+1. L'utilisateur ouvre le scénario seed de référence.
 2. Il choisit `deterministic`, `live_llm` ou `compare`.
-3. Le systeme execute le pipeline et affiche les etapes, les artefacts et les resultats.
-4. L'utilisateur peut comparer les profils, ouvrir le relay, comprendre les decisions et verifier ou l'humain intervient.
+3. Le système exécute le pipeline et affiche les étapes, les artefacts et les résultats.
+4. L'utilisateur peut comparer les profils, ouvrir le relay, comprendre les décisions et vérifier où l'humain intervient.
 
-Ce que le resultat prouve :
+Ce que le résultat prouve :
 
 - une architecture multi-agent lisible
 - un arbitrage local vs provider
-- un fallback defendable
-- une explicabilite par artefacts
+- un fallback défendable
+- une explicabilité par artefacts
 - une supervision humaine explicite
 
 ## Vue d'ensemble de l'architecture
@@ -191,25 +191,25 @@ flowchart LR
   L --> M[Review Gate]
 ```
 
-L'interface declenche un run via `runEngine`, qui orchestre le scenario seed. La logique provider est isolee dans `providerAdapters`. En mode `compare`, le systeme rejoue le meme lot dans deux chemins distincts, puis affiche les ecarts visibles pour aider a juger la difference entre local et provider.
+L'interface déclenche un run via `runEngine`, qui orchestre le scénario seed. La logique provider est isolée dans `providerAdapters`. En mode `compare`, le système rejoue le même lot dans deux chemins distincts, puis affiche les écarts visibles pour aider à juger la différence entre local et provider.
 
-## Fonctionnalites
+## Fonctionnalités
 
-- scenario seed fixe pour des demos stables et defendables
-- pipeline multi-agent nomme avec handoffs visibles
+- scénario seed fixe pour des démos stables et défendables
+- pipeline multi-agent nommé avec handoffs visibles
 - modes `deterministic`, `live_llm` et `compare`
 - support BYOK OpenAI et Gemini
-- artefacts inspectables a chaque etape utile
-- fallback explicite quand le provider n'est pas disponible ou echoue
-- comparaison local vs provider sur le meme scenario
+- artefacts inspectables à chaque étape utile
+- fallback explicite quand le provider n'est pas disponible ou échoue
+- comparaison local vs provider sur le même scénario
 - revue humaine obligatoire avant toute action finale
 
 ## Stack technique
 
 - Frontend : React, TypeScript, Vite
 - Backend : aucun dans cette V1
-- IA / Providers : OpenAI, Gemini, moteur deterministe local
-- Donnees / Stockage : scenario seed local, etat navigateur
+- IA / Providers : OpenAI, Gemini, moteur déterministe local
+- Données / Stockage : scénario seed local, état navigateur
 - Tests : Vitest, Testing Library
 
 ## Structure du projet
@@ -247,65 +247,65 @@ npm test
 
 ## Variables d'environnement
 
-Aucune variable d'environnement n'est requise pour la demo publique en `deterministic`.
+Aucune variable d'environnement n'est requise pour la démo publique en `deterministic`.
 
-Le projet suit un modele BYOK :
+Le projet suit un modèle BYOK :
 
-- les cles provider sont saisies dans l'interface
-- elles ne sont pas commit dans le depot
-- la demo reste utile sans cle
+- les clés provider sont saisies dans l'interface
+- elles ne sont pas commit dans le dépôt
+- la démo reste utile sans clé
 
-Voir [.env.example](./.env.example) pour le format documente.
+Voir [.env.example](./.env.example) pour le format documenté.
 
-## Notes de securite
+## Notes de sécurité
 
-- aucune cle API n'est requise pour la demo par defaut
-- les secrets ne sont pas stockes dans le depot
+- aucune clé API n'est requise pour la démo par défaut
+- les secrets ne sont pas stockés dans le dépôt
 - `live_llm` et `compare` sont optionnels et BYOK
-- aucune action externe reelle n'est declenchee
-- l'envoi d'email est mocke dans cette V1
+- aucune action externe réelle n'est déclenchée
+- l'envoi d'email est mocké dans cette V1
 - une revue humaine reste obligatoire
-- ce projet n'est pas concu pour un usage RH autonome en production
+- ce projet n'est pas conçu pour un usage RH autonome en production
 
-## Ce que le projet demontre
+## Ce que le projet démontre
 
-- orchestration multi-agent sur un cas metier clair
-- separation entre UI, moteur de run et couche provider
-- arbitrage deterministe vs LLM
-- compare mode utile pour juger un systeme
-- fallback visible et defendable
-- explicabilite par artefacts
-- pensee produit et UX de demonstration
+- orchestration multi-agent sur un cas métier clair
+- séparation entre UI, moteur de run et couche provider
+- arbitrage déterministe vs LLM
+- compare mode utile pour juger un système
+- fallback visible et défendable
+- explicabilité par artefacts
+- pensée produit et UX de démonstration
 
-## Perimetre actuel
+## Périmètre actuel
 
-- scenario de recrutement seed en lecture seule
+- scénario de recrutement seed en lecture seule
 - pipeline multi-agent local avec artefacts visibles
-- execution locale stable
-- execution provider optionnelle
-- comparaison local vs provider sur le meme lot
+- exécution locale stable
+- exécution provider optionnelle
+- comparaison local vs provider sur le même lot
 
 ## Limites actuelles
 
-- pas de vraie inbox email ou d'ATS connecte
+- pas de vraie inbox email ou d'ATS connecté
 - pas d'upload libre de candidats dans cette V1
 - pas de backend durable ni d'authentification
-- pas d'orchestration distribuee reelle
-- la demo publique repose sur un seul scenario seed fixe
+- pas d'orchestration distribuée réelle
+- la démo publique repose sur un seul scénario seed fixe
 
 ## Angle portfolio
 
-Le projet est mieux presente comme :
+Le projet est mieux présenté comme :
 
-un systeme de recrutement assiste par IA qui montre un pipeline multi-agent local, compare une execution deterministe et une execution provider, expose ses artefacts intermediaires et garde l'humain dans la boucle
+un système de recrutement assisté par IA qui montre un pipeline multi-agent local, compare une exécution déterministe et une exécution provider, expose ses artefacts intermédiaires et garde l'humain dans la boucle
 
-## Ameliorations futures
+## Améliorations futures
 
 - ajouter une couche backend pour stocker les runs durablement
-- decouper certaines etapes en vrais services ou workers
-- enrichir l'observabilite et la telemetrie
-- ajouter d'autres scenarios seed ou un mode sandbox plus large
+- découper certaines étapes en vrais services ou workers
+- enrichir l'observabilité et la télémétrie
+- ajouter d'autres scénarios seed ou un mode sandbox plus large
 
-## Assets de demo
+## Assets de démo
 
-- [Schema de workflow](./docs/public/WORKFLOW_SCHEMA.md)
+- [Schéma de workflow](./docs/public/WORKFLOW_SCHEMA.md)
