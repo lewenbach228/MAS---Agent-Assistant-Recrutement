@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/main.tsx","./src/types.ts","./src/data/demo.ts","./src/hooks/userecruiterdemo.ts","./src/infrastructure/providers/provideradapters.ts","./src/lib/demoengine.ts","./src/lib/runengine.ts"],"version":"5.9.3"}
