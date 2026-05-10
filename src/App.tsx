@@ -459,10 +459,10 @@ function App() {
     <div className="app-shell">
       <header className={headerClass}>
         <div className="header-brand">
-          <span className="brand-eyebrow">Console IA Recruteur</span>
+          <span className="brand-eyebrow">Agent Assistant Recrutement</span>
           <div className="brand-row">
             <div>
-              <h1>Analyse multi-agents</h1>
+              <h1>Agent Assistant Recrutement</h1>
               <p className="header-description">
                 Le système rejoue un scénario seed complet et expose les différences entre mode
                 déterministe et chemin provider sur un même lot candidat et une même fiche de poste.

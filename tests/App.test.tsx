@@ -7,7 +7,9 @@ describe("App", () => {
     render(<App />);
 
     expect(screen.getByText("Scénario seed de référence")).toBeTruthy();
-    expect(screen.getByText("Analyse multi-agents")).toBeTruthy();
+    expect(
+      screen.getByRole("heading", { name: "Agent Assistant Recrutement" }),
+    ).toBeTruthy();
     expect(screen.queryByText("Classement des candidatures")).toBeNull();
   });
 });
